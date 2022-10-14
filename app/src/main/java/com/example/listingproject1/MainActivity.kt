@@ -31,27 +31,26 @@ class MainActivity : AppCompatActivity() {
             value.addLast(note.toString())
 //            val resultTextView: TextView = findViewById(R.id.textView2)
 //            resultTextView.text = value.toString()
-            for (i in 0..value.size - 1) {
-                when {
-                    i == 0 -> {
+            for (i in 0 until value.size) {
+                when (i) {
+                    0 -> {
                         // stored first value in first textview
                         val resultTextView: TextView = findViewById(R.id.textView2)
                         resultTextView.text = value[i]
                     }
-                    i == 1 -> {
+                    1 -> {
                         // stored second value in second textview
                         val resultTextView: TextView = findViewById(R.id.textView3)
                         resultTextView.text = value[i]
                     }
-                    i == 2 -> {
+                    2 -> {
                         val resultTextView: TextView = findViewById(R.id.textView4)
                         resultTextView.text = value[i]
                     }
-                    i == 3 -> {
+                    3 -> {
                         val resultTextView: TextView = findViewById(R.id.textView5)
                         resultTextView.text = value[i]
                     }
-
                     else -> {
                         // display "there is no space"
                         Toast.makeText(this,"There is no space",Toast.LENGTH_SHORT).show()
@@ -59,6 +58,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+            // clear the input
+            input.text.clear()
         }
 
 
@@ -76,30 +77,31 @@ class MainActivity : AppCompatActivity() {
 
             val note = input.text
             value.remove(note.toString())
-            for (i in 0..value.size - 1) {
-                when {
-                    i == 0 -> {
+            for (i in 0 until value.size) {
+                when (i) {
+                    0 -> {
                         val resultTextView: TextView = findViewById(R.id.textView2)
                         resultTextView.text = value[i]
                     }
-                    i == 1 -> {
+                    1 -> {
                         val resultTextView: TextView = findViewById(R.id.textView3)
                         resultTextView.text = value[i]
                     }
-                    i == 2 -> {
+                    2 -> {
                         val resultTextView: TextView = findViewById(R.id.textView4)
                         resultTextView.text = value[i]
                     }
-                    i == 3 -> {
+                    3 -> {
                         val resultTextView: TextView = findViewById(R.id.textView5)
                         resultTextView.text = value[i]
                     }
-
                     else -> {
                         Toast.makeText(this,"There is no space",Toast.LENGTH_SHORT).show()
                     }
                 }
             }
+            // clear the input
+            input.text.clear()
         }
     }
 }
