@@ -296,30 +296,3 @@ class MainActivity : AppCompatActivity() {
 //    }
 //}
 
-//class display (value: LinkedList<String>.findViewById){
-//    init{
-//        this.findViewById(R.id.textView2)
-//    }
-//}
-
-//fun dis(value,text,resultTextView2,resultTextView3,resultTextView4,resultTextView5) {
-//    for (i in 0 until value.size) {
-//        when (i) {
-//            0 -> {
-//                resultTextView2.text = value[i]
-//            }
-//            1 -> {
-//                resultTextView3.text = value[i]
-//            }
-//            2 -> {
-//                resultTextView4.text = value[i]
-//            }
-//            3 -> {
-//                resultTextView5.text = value[i]
-//            }
-//            else -> {
-//                Toast.makeText(this, "There is no space", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//    }
-//}
