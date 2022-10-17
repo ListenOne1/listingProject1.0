@@ -38,78 +38,36 @@ class MainActivity : AppCompatActivity() {
         val imageButton4: ImageButton = findViewById(R.id.imageButton4)
 
         //press the input
-        inputButton.setOnClickListener{
+        inputButton.setOnClickListener {
             // get the input
             val note = input.text
             // add to the list
             value.addLast(note.toString())
 //            val resultTextView: TextView = findViewById(R.id.textView2)
 //            resultTextView.text = value.toString()
-            for (i in 0 until value.size) {
-                when (i) {
-                    0 -> {
-                        // stored first value in first textview
+            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
 
-                        resultTextView2.text = value[i]
-                    }
-                    1 -> {
-                        // stored second value in second textview
-                        resultTextView3.text = value[i]
-                    }
-                    2 -> {
-                        resultTextView4.text = value[i]
-                    }
-                    3 -> {
-                        resultTextView5.text = value[i]
-                    }
-                    else -> {
-                        // display "there is no space"
-                        Toast.makeText(this,"There is no space",Toast.LENGTH_SHORT).show()
-                        value.remove(note.toString())
-                    }
-                }
-            }
             // clear the input
             input.text.clear()
         }
 
 
         // press delete button
-        deleteButton.setOnClickListener{
+        deleteButton.setOnClickListener {
             // clear the list
-            resultTextView2.text = ""
-            resultTextView3.text = ""
-            resultTextView4.text = ""
-            resultTextView5.text = ""
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
 
             val note = input.text
             value.remove(note.toString())
-            for (i in 0 until value.size) {
-                when (i) {
-                    0 -> {
-                        resultTextView2.text = value[i]
-                    }
-                    1 -> {
-                        resultTextView3.text = value[i]
-                    }
-                    2 -> {
-                        resultTextView4.text = value[i]
-                    }
-                    3 -> {
-                        resultTextView5.text = value[i]
-                    }
-                    else -> {
-                        Toast.makeText(this, "There is no space", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
+            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+
             // clear the input
             input.text.clear()
         }
 
         // press one of the check box
-        checkBox1.setOnClickListener{
-            val check:Boolean = checkBox1.isChecked
+        checkBox1.setOnClickListener {
+            val check: Boolean = checkBox1.isChecked
             if (check) {
                 resultTextView2.setTextColor(Color.GRAY)
                 resultTextView2.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG
@@ -118,8 +76,8 @@ class MainActivity : AppCompatActivity() {
                 resultTextView2.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG.inv()
             }
         }
-        checkBox2.setOnClickListener{
-            val check:Boolean = checkBox2.isChecked
+        checkBox2.setOnClickListener {
+            val check: Boolean = checkBox2.isChecked
             if (check) {
                 resultTextView3.setTextColor(Color.GRAY)
                 resultTextView3.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG
@@ -128,8 +86,8 @@ class MainActivity : AppCompatActivity() {
                 resultTextView3.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG.inv()
             }
         }
-        checkBox3.setOnClickListener{
-            val check:Boolean = checkBox3.isChecked
+        checkBox3.setOnClickListener {
+            val check: Boolean = checkBox3.isChecked
             if (check) {
                 resultTextView4.setTextColor(Color.GRAY)
                 resultTextView4.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG
@@ -138,8 +96,8 @@ class MainActivity : AppCompatActivity() {
                 resultTextView4.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG.inv()
             }
         }
-        checkBox4.setOnClickListener{
-            val check:Boolean = checkBox4.isChecked
+        checkBox4.setOnClickListener {
+            val check: Boolean = checkBox4.isChecked
             if (check) {
                 resultTextView5.setTextColor(Color.GRAY)
                 resultTextView5.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG
@@ -150,149 +108,75 @@ class MainActivity : AppCompatActivity() {
         }
 
         // delete function
-        imageButton1.setOnClickListener{
+        imageButton1.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
             value.removeAt(0)
-            resultTextView2.text = ""
-            resultTextView3.text = ""
-            resultTextView4.text = ""
-            resultTextView5.text = ""
-            for (i in 0 until value.size) {
-                when (i) {
-                    0 -> {
-                        resultTextView2.text = value[i]
-                    }
-                    1 -> {
-                        resultTextView3.text = value[i]
-                    }
-                    2 -> {
-                        resultTextView4.text = value[i]
-                    }
-                    3 -> {
-                        resultTextView5.text = value[i]
-                    }
-                    else -> {
-                        Toast.makeText(this, "There is no space", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
-        imageButton2.setOnClickListener{
+        imageButton2.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
             value.removeAt(1)
-            resultTextView2.text = ""
-            resultTextView3.text = ""
-            resultTextView4.text = ""
-            resultTextView5.text = ""
-            for (i in 0 until value.size) {
-                when (i) {
-                    0 -> {
-                        resultTextView2.text = value[i]
-                    }
-                    1 -> {
-                        resultTextView3.text = value[i]
-                    }
-                    2 -> {
-                        resultTextView4.text = value[i]
-                    }
-                    3 -> {
-                        resultTextView5.text = value[i]
-                    }
-                    else -> {
-                        Toast.makeText(this, "There is no space", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
-        imageButton3.setOnClickListener{
+        imageButton3.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
             value.removeAt(2)
-            resultTextView2.text = ""
-            resultTextView3.text = ""
-            resultTextView4.text = ""
-            resultTextView5.text = ""
-            for (i in 0 until value.size) {
-                when (i) {
-                    0 -> {
-                        resultTextView2.text = value[i]
-                    }
-                    1 -> {
-                        resultTextView3.text = value[i]
-                    }
-                    2 -> {
-                        resultTextView4.text = value[i]
-                    }
-                    3 -> {
-                        resultTextView5.text = value[i]
-                    }
-                    else -> {
-                        Toast.makeText(this, "There is no space", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
-        imageButton4.setOnClickListener{
+        imageButton4.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
             value.removeAt(3)
-            resultTextView2.text = ""
-            resultTextView3.text = ""
-            resultTextView4.text = ""
-            resultTextView5.text = ""
-            for (i in 0 until value.size) {
-                when (i) {
-                    0 -> {
-                        resultTextView2.text = value[i]
-                    }
-                    1 -> {
-                        resultTextView3.text = value[i]
-                    }
-                    2 -> {
-                        resultTextView4.text = value[i]
-                    }
-                    3 -> {
-                        resultTextView5.text = value[i]
-                    }
-                    else -> {
-                        Toast.makeText(this, "There is no space", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
-
-
     }
-}
-
-//abstract class checkBoxPress(private var idName: String){
+    //abstract class checkBoxPress(private var idName: String){
 //    val resultTextView: TextView = findViewById("R.id.$idName")
 //    resultTextView.text = value[i]
 //    .setTextColor(Color.RED)
 //}
+    fun displayFun(
+        value: LinkedList<String>,
+        resultTextView2: TextView,
+        resultTextView3: TextView,
+        resultTextView4: TextView,
+        resultTextView5: TextView
+    ) {
+        for (i in 0 until value.size) {
+            when (i) {
+                0 -> {
+                    // stored first value in first textview
+                    resultTextView2.text = value[i]
+                }
+                1 -> {
+                    // stored second value in second textview
+                    resultTextView3.text = value[i]
+                }
+                2 -> {
+                    resultTextView4.text = value[i]
+                }
+                3 -> {
+                    resultTextView5.text = value[i]
+                }
+                else -> {
+                    Toast.makeText(this, "There is no space", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+}
 
-//fun displayFun(value: LinkedList<String>,findViewById) {
-//    for (i in 0 until value.size)
-//    {
-//        when (i) {
-//            0 -> {
-//                val resultTextView: TextView = findViewById(R.id.textView2)
-//                resultTextView.text = value[i]
-//            }
-//            1 -> {
-//                val resultTextView: TextView = findViewById(R.id.textView3)
-//                resultTextView.text = value[i]
-//            }
-//            2 -> {
-//                val resultTextView: TextView = findViewById(R.id.textView4)
-//                resultTextView.text = value[i]
-//            }
-//            3 -> {
-//                val resultTextView: TextView = findViewById(R.id.textView5)
-//                resultTextView.text = value[i]
-//            }
-//            else -> {
-//                Toast.makeText(this, "There is no space", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//    }
-//}
-
+fun displayClear(
+    resultTextView2: TextView,
+    resultTextView3: TextView,
+    resultTextView4: TextView,
+    resultTextView5: TextView
+) {
+    resultTextView2.text = ""
+    resultTextView3.text = ""
+    resultTextView4.text = ""
+    resultTextView5.text = ""
+}
