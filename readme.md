@@ -21,6 +21,7 @@ The program is designed to help users organize shopping lists or to-do lists. Th
 
 # Future Work
 
+{Make a list of things that you need to fix, improve, and add in the future.}
 * Create a class can do the display
 * Create another page
 * Can store data
