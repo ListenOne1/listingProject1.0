@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         // press delete button
         deleteButton.setOnClickListener {
             // clear the list
-            clearFun(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
 
             val note = input.text
             value.remove(note.toString())
@@ -111,33 +111,25 @@ class MainActivity : AppCompatActivity() {
         imageButton1.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
             value.removeAt(0)
-            // clear
-            clearFun(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
-            // display
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
             displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
         imageButton2.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
             value.removeAt(1)
-            // clear
-            clearFun(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
-            // display
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
             displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
         imageButton3.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
             value.removeAt(2)
-            // clear
-            clearFun(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
-            // display
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
             displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
         imageButton4.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
             value.removeAt(3)
-            // clear
-            clearFun(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
-            // display
+            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
             displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
     }
@@ -177,7 +169,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-fun clearFun(
+fun displayClear(
     resultTextView2: TextView,
     resultTextView3: TextView,
     resultTextView4: TextView,
