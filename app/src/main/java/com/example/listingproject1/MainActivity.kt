@@ -110,27 +110,38 @@ class MainActivity : AppCompatActivity() {
         // delete function
         imageButton1.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
-            value.removeAt(0)
+            if (value.size > 0){
+                value.removeAt(0)
+            }
             displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
             displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
         }
         imageButton2.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
-            value.removeAt(1)
-            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
-            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+            if (value.size > 1) {
+                value.removeAt(1)
+                displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+                displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5
+                )
+            }
         }
         imageButton3.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
-            value.removeAt(2)
-            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
-            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+            if (value.size > 2) {
+                value.removeAt(2)
+                displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+                displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5
+                )
+            }
         }
         imageButton4.setOnClickListener {
             Toast.makeText(this, "click button", Toast.LENGTH_SHORT).show()
-            value.removeAt(3)
-            displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
-            displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+            if (value.size > 2) {
+                value.removeAt(3)
+                displayClear(resultTextView2, resultTextView3, resultTextView4, resultTextView5)
+                displayFun(value, resultTextView2, resultTextView3, resultTextView4, resultTextView5
+                )
+            }
         }
     }
     //abstract class checkBoxPress(private var idName: String){
